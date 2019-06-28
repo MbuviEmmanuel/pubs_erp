@@ -4,15 +4,21 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
-import javafx.scene.control.TextField;
+import javafx.geometry.Pos;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
+import javax.swing.*;
+import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
 import java.util.ResourceBundle;
 
 public class Controller implements Initializable {
@@ -28,6 +34,15 @@ public class Controller implements Initializable {
     @FXML private AnchorPane main_pane;
     @FXML private Button clz, max, res, min;
 
+    Connection connection = null;
+    ResultSet rs;
+    PreparedStatement pst;
+
+
+   /* public static int All_UserID = 0;
+    public static int All_OwnerID = 0;
+    public static String All_FullName;
+*/
     /**
      * Called to initialize a controller after its root element has been completely processed.
      *
@@ -41,11 +56,85 @@ public class Controller implements Initializable {
 
         keep_loggedin.setOnAction(event -> {
             //TODO: Add implementation here
+
         });
 
         login.setOnAction(event -> {
             //TODO: Add implementation here
-            main_pane.toFront();
+            //main_pane.toFront();
+
+            if(usr_id.getText().isEmpty() && usr_pass.getText().isEmpty()){
+
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Warning");
+                alert.setHeaderText("Username And Password Empty");
+                alert.setContentText("");
+                alert.showAndWait();
+            }
+            else if(usr_id.getText().isEmpty())
+            {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Information Dialog");
+                alert.setHeaderText("Username Empty");
+                alert.setContentText("");
+                alert.showAndWait();
+
+            }else if(usr_pass.getText().isEmpty()){
+                Alert alert = new Alert(Alert.AlertType.WARNING);
+                alert.setTitle("Information Dialog");
+                alert.setHeaderText("Password is Empty");
+                alert.setContentText("");
+                alert.showAndWait();
+
+            }else {
+                String username = usr_id.getText();
+                String password = usr_pass.getText();
+
+                try {
+                    Class.forName("com.mysql.jdbc.Driver");
+                    connection =DriverManager.getConnection("jdbc:mysql://localhost/pub", "root", "Emmambu6&");
+                    pst = connection.prepareStatement("select * from user where usename=? and password =?");
+
+                    pst.setString(1, username);
+                    pst.setString(2, password);
+                    rs = pst.executeQuery();
+
+                    if (rs.next()) {
+                        FXMLLoader loader;
+                        if (usr_pass.getText().equals(rs.getString("password"))) {
+                            loader = new FXMLLoader(getClass().getResource("/GeneralUI.fxml"));
+                            loader.setController(new Controller());
+                            main_pane.toFront();
+
+                        } else {
+                            Alert alert = new Alert(Alert.AlertType.WARNING);
+                            alert.setTitle("Warning");
+                            alert.setHeaderText("Wrong Password! Try Again.");
+                            alert.setContentText("");
+                            alert.showAndWait();
+                        }
+                    } else {
+                        Alert alert = new Alert(Alert.AlertType.WARNING);
+                        alert.setTitle("Warning");
+                        alert.setHeaderText("Invalid User Name!");
+                        alert.setContentText("");
+                        alert.showAndWait();
+                    }
+                } catch (SQLException e) {
+
+                    e.printStackTrace();
+                    Alert alert = new Alert(Alert.AlertType.WARNING);
+                    alert.setTitle("Warning");
+                    alert.setHeaderText("Connection Failed.");
+                    alert.setContentText("");
+                    alert.showAndWait();
+
+                }
+                catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                }
+            }
+
         });
 
         forgot_pass.setOnMouseClicked(event -> {

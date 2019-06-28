@@ -15,6 +15,8 @@ repositories {
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
     compile 'com.jfoenix:jfoenix:8.0.8'
+    compile 'mysql:mysql-connector-java:5.1.23'
+    
 }
 
 mainClassName = 'pubs_erp.Main'
