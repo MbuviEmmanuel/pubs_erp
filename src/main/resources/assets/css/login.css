@@ -1,0 +1,32 @@
+/*
+    Created on : June 27, 2019
+    Author     : BENJAH
+
+    Styles for the login page
+*/
+
+#login_pane{
+    -fx-background-color:  -t;
+}
+
+#err_msg{
+    -fx-font-family: 'Segoe UI Bold';
+    -fx-text-fill: derive(-d, 35%);
+}
+
+#usr_id, #usr_pass {
+    -fx-alignment: CENTER;
+    -fx-pref-width: 250;
+}
+
+#usr_id:focused, #usr_pass:focused{
+    -fx-background-color: derive(-t, 165%);
+}
+
+#usr_id:focused, #usr_pass:focused{
+    -fx-border-color: transparent;
+}
+
+.check-box {
+    -fx-text-fill: white;
+}
