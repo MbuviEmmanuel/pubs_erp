@@ -1,0 +1,752 @@
+/*
+    BootstrapFX CSS
+    Copyright (c) 2019 Wasula Benjamin
+*/
+
+/* 1. GENERAL *********************************************************************************************************/
+@font-face {
+    font-family: 'Segoe UI Bold';
+    src: url('../fonts/segoeui-bold.ttf');
+}
+
+@font-face {
+    font-family: 'Segoe UI Bold Italic';
+    src: url('../fonts/segoeui-bolditalic.ttf');
+}
+
+@font-face {
+    font-family: 'Segoe UI Semibold';
+    src: url('../fonts/segoeui-semibold.ttf');
+}
+
+/*
+@font-face {
+    font-family: 'Segoe UI Semibold Italic';
+    src: url('../fonts/segoeui-semibolditalic.ttf');
+}
+*/
+
+@font-face {
+    font-family: 'Segoi UI';
+    src: url('../fonts/segoeui.ttf');
+}
+
+@font-face {
+    font-family: 'Segoe UI Italic';
+    src: url('../fonts/segoeui-italic.ttf');
+}
+
+@font-face {
+    font-family: 'Segoe UI Semilight';
+    src: url('../fonts/segoeui-semilight.ttf');
+}
+
+@font-face {
+    font-family: 'Segoe UI Semilight Italic';
+    src: url('../fonts/segoeui-semilightitalic.ttf');
+}
+
+@font-face {
+    font-family: 'Consolas';
+    src: url('../fonts/consolas.ttf');
+}
+
+@font-face {
+    font-family: 'Consolas Italic';
+    src: url('../fonts/consolas-italic.ttf');
+}
+
+.root {
+    -p: #007BFF; /* Color.Primary   */
+    -s: #28A745; /* Color.Success   */
+    -i: #17A2B8; /* Color.Info      */
+    -w: #FFC107; /* Color.Warning   */
+    -d: #DC3545; /* Color.Danger    */
+    -t: #263238; /* Color.Theme     */
+}
+
+.label, .button, .toggle-button, .radio-button, .text-field, .check-box, .choice-box .menu-item > .label, .text-area,
+.combo-box-base .text, .jfx-text-area, .list-cell {
+    -fx-font-family: 'Segoe UI';
+    -fx-font-size: 1.083333em;
+    -fx-text-fill: -t;
+}
+
+*:disabled {
+    -fx-focus-traversable: false;
+}
+
+
+/* 2. TYPOGRAPHY (Label, Text, TextFlow) ******************************************************************************/
+.label {
+    -fx-background-insets: 0.416667em 0em 0em 0em;
+    -fx-padding: 0.416667em 0em 0em 0em;
+    -fx-text-alignment: justify;
+    -fx-wrap-text: true;
+}
+
+Text {
+    -fx-fill: -t;
+    -fx-font-smoothing-type: LCD;
+}
+
+TextFlow {
+    -fx-text-alignment: justify;
+}
+
+TextFlow .label {
+    -fx-padding: 0em 0em 0em 0em;
+}
+
+.heading {
+    -fx-padding: 3.333333em 0em 0em 0em;
+}
+
+.display {
+    -fx-padding: 1.666667em 0em 0em 0em;
+}
+
+.h1, .display-1 {
+    -fx-font-size: 1.833333em;
+}
+
+.h2, .display-2 {
+    -fx-font-size: 1.666667em;
+}
+
+.h3, .display-3, .blockquote-heading {
+    -fx-font-size: 1.5em;
+}
+
+.h4, .display-4 {
+    -fx-font-size: 1.333333em;
+}
+
+.h5, .lead {
+    -fx-font-size: 1.166667em;
+}
+
+.h6, .small {
+    -fx-font-size: 1.083333em;
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    -fx-font-family: 'Segoe UI Semibold';
+}
+
+.small {
+    -fx-text-fill: derive(-t, 75%);
+}
+
+.lead {
+    -fx-font-family: 'Segoe UI Semilight';
+    -fx-text-fill: derive(-t, -25%);
+}
+
+.mark-primary {
+    -fx-background-color: derive(-p, 75%);
+}
+
+.mark-success {
+    -fx-background-color: derive(-s, 75%);
+}
+
+.mark-info {
+    -fx-background-color: derive(-i, 75%);
+}
+
+.mark-warning {
+    -fx-background-color: derive(-w, 75%);
+}
+
+.mark-danger {
+    -fx-background-color: derive(-d, 75%);
+}
+
+.underlined * {
+    -fx-underline: true;
+}
+
+.fine-print * {
+    -fx-font-family: 'Segoe UI Semilight';
+    -fx-font-size: 1.0em;
+}
+
+.text-left * {
+    -fx-text-alignment: left;
+}
+
+.text-center * {
+    -fx-text-alignment: center;
+}
+
+.text-right * {
+    -fx-text-alignment: right;
+}
+
+.text-bold {
+    -fx-font-family: 'Segoe UI Bold';
+}
+
+.text-bold-italic {
+    -fx-font-family: 'Segoe UI Bold Italic';
+}
+
+.text-semibold {
+    -fx-font-family: 'Segoe UI Semibold';
+}
+
+.text-semibold-italic {
+    -fx-font-family: 'Segoe UI Semibold Italic';
+}
+
+.text-italic, .cite {
+    -fx-font-family: 'Segoe UI Italic';
+}
+
+.text-semilight {
+    -fx-font-family: 'Segoe UI Semilight';
+}
+
+.text-semilight-italic {
+    -fx-font-family: 'Segoe UI Semilight Italic';
+}
+
+.text-primary * {
+    -fx-text-fill: -p;
+}
+
+.text-success * {
+    -fx-text-fill: -s;
+}
+
+.text-info * {
+    -fx-text-fill: -i;
+}
+
+.text-warning * {
+    -fx-text-fill: -w;
+}
+
+.text-danger * {
+    -fx-text-fill: -d;
+}
+
+.text-primary *, .text-success *, .text-info *, .text-warning *, .text-danger * {
+    -fx-fill: -fx-text-fill;
+}
+
+.code {
+    -fx-text-fill: -d;
+}
+
+.pre {
+    -fx-background-color: derive(-t, 150%);
+    -fx-border-color: derive(-t, 50%);
+}
+
+.var {
+    -fx-font-family: 'Consolas Italic';
+}
+
+.kbd {
+    -fx-background-color: -t;
+    -fx-background-insets: -0.083333em 0em -0.083333em 0em;
+    -fx-padding: 0em 0.416667em 0em 0.416667em;
+    -fx-text-fill: #FFFFFF;
+}
+
+.code, .pre .label, .kbd, .samp {
+    -fx-font-family: 'Consolas';
+}
+
+.blockquote {
+    -fx-border-color: derive(-i, 50%);
+}
+
+.blockquote-footer, .cite {
+    -fx-fill: derive(-t, 50%);
+    -fx-text-fill: derive(-t, 50%);
+}
+
+.pre, .blockquote {
+    -fx-background-insets: 0.833333em 0em 0em 0em;
+    -fx-border-insets: 0.833333em 0em 0em 0em;
+    -fx-border-width: 0.041667em 0.041667em 0.041667em 0.416667em;
+    -fx-padding: 0.416667em 0.833333em 0.833333em 1.25em;
+}
+
+
+/* 3. BUTTONS (Button, JFXButton, ToggleButton, JFXToggleButton, RadioButton, JFXRadioButton, CheckBox, JFXCheckBox,
+      ChoiceBox) ******************************************************************************************************/
+.button, .toggle-button, .choice-box {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 0em;
+    -fx-border-color: derive(-t, 50%);
+    -fx-cursor: hand;
+    -fx-graphic-text-gap: 1.25em;
+    -fx-mark-color: -t;
+}
+
+.btn-icon {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-content-display: graphic-only;
+}
+
+.btn-rounded {
+    -fx-background-radius: 1.25em;
+    -fx-border-radius: 1.25em;
+}
+
+.toggle-button:selected {
+    -fx-background-color: derive(-t, 50%);
+}
+
+.btn-outline-primary, .toggle-primary {
+    -fx-border-color: -p;
+    -fx-text-fill: -p;
+}
+
+.btn-outline-success, .toggle-success {
+    -fx-border-color: -s;
+    -fx-text-fill: -s;
+}
+
+.btn-outline-info, .toggle-info {
+    -fx-border-color: -i;
+    -fx-text-fill: -i;
+}
+
+.btn-outline-warning, .toggle-warning {
+    -fx-border-color: -w;
+    -fx-text-fill: -w;
+}
+
+.btn-outline-danger, .toggle-danger {
+    -fx-border-color: -d;
+    -fx-text-fill: -d;
+}
+
+.button:hover {
+    -fx-background-color: derive(#FFFFFF, -10%);
+}
+
+.btn-primary, .btn-outline-primary:hover, .toggle-primary:selected {
+    -fx-background-color: -p;
+}
+
+.btn-success, .btn-outline-success:hover, .toggle-success:selected {
+    -fx-background-color: -s;
+}
+
+.btn-info, .btn-outline-info:hover, .toggle-info:selected {
+    -fx-background-color: -i;
+}
+
+.btn-warning, .btn-outline-warning:hover, .toggle-warning:selected {
+    -fx-background-color: -w;
+}
+
+.btn-danger, .btn-outline-danger:hover, .toggle-danger:selected {
+    -fx-background-color: -d;
+}
+
+.btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger {
+    -fx-border-color: transparent;
+}
+
+.btn-primary, .btn-success, .btn-info, .btn-warning, .btn-danger, .btn-outline-primary:hover, .toggle-button:selected,
+.btn-outline-success:hover, .btn-outline-info:hover, .btn-outline-warning:hover, .btn-outline-danger:hover {
+    -fx-text-fill: #FFFFFF;
+}
+
+.btn-primary:hover {
+    -fx-background-color: derive(-p, -10%);
+}
+
+.btn-success:hover {
+    -fx-background-color: derive(-s, -10%);
+}
+
+.btn-info:hover {
+    -fx-background-color: derive(-i, -10%);
+}
+
+.btn-warning:hover {
+    -fx-background-color: derive(-w, -10%);
+}
+
+.btn-danger:hover {
+    -fx-background-color: derive(-d, -10%);
+}
+
+.button:pressed, .toggle-button:pressed {
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 6, 0.5, 0.5, 0.5);
+}
+
+.btn-xs {
+    -fx-pref-width: 5em;
+}
+
+.btn-sm {
+    -fx-pref-width: 6.153846em;
+}
+
+.btn-md {
+    -fx-pref-width: 8.333333em;
+}
+
+.btn-lg {
+    -fx-pref-width: 10.0em;
+}
+
+.btn-xl {
+    -fx-pref-width: 11.666667em;
+}
+
+.btn-raised {
+    -jfx-button-type: RAISED;
+}
+
+.jfx-toggle-button, .jfx-toggle-button:pressed, .jfx-toggle-button:selected {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-effect: null;
+    -fx-graphic-text-gap: 5;
+    -fx-padding: -0.916667em 0.833333em -0.916667em -0.416667em;
+    -fx-text-fill: -t;
+    -jfx-size: 0.708333em;
+    -jfx-toggle-color: -t;
+    -jfx-toggle-line-color: derive(-jfx-toggle-color, 75%);
+    -jfx-untoggle-color: derive(-t, 160%);
+    -jfx-untoggle-line-color: derive(-jfx-toggle-color, 50%);
+}
+
+.toggle-primary.jfx-toggle-button {
+    -jfx-toggle-color: -p;
+}
+
+.toggle-success.jfx-toggle-button {
+    -jfx-toggle-color: -s;
+}
+
+.toggle-info.jfx-toggle-button {
+    -jfx-toggle-color: -i;
+}
+
+.toggle-warning.jfx-toggle-button {
+    -jfx-toggle-color: -w;
+}
+
+.toggle-danger.jfx-toggle-button {
+    -jfx-toggle-color: -d;
+}
+
+.radio-button {
+    -fx-cursor: hand;
+    -jfx-selected-color: -t;
+    -jfx-unselected-color: -jfx-selected-color;
+}
+
+.radio-button .radio {
+    -fx-background-color: transparent;
+    -fx-border-color: derive(-jfx-selected-color, 10%);
+    -fx-border-radius: 0.666667em;
+    -fx-border-width: 0.125em;
+    -fx-pref-height: 1.25em;
+    -fx-pref-width: 1.25em;
+}
+
+.radio-primary {
+    -jfx-selected-color: -p;
+}
+
+.radio-success {
+    -jfx-selected-color: -s;
+}
+
+.radio-info {
+    -jfx-selected-color: -i;
+}
+
+.radio-warning {
+    -jfx-selected-color: -s;
+}
+
+.radio-danger {
+    -jfx-selected-color: -d;
+}
+
+.radio-button:selected .radio {
+    -fx-border-color: -jfx-selected-color;
+}
+
+.radio-button:selected .dot {
+    -fx-background-color: -jfx-selected-color;
+    -fx-background-insets: 0.008333em;
+}
+
+.check-box {
+    -fx-cursor: hand;
+    -fx-text-fill: -t;
+}
+
+.check-box > .box, .check-box:indeterminate > .box, .check-box:indeterminate:selected > .box {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0.166667em;
+    -fx-border-color: -t;
+    -fx-border-radius: 0.166667em;
+    -fx-border-width: 0.166667em;
+    -fx-pref-width: 1.5em;
+    -fx-pref-height: 1.5em;
+}
+
+.check-box:selected > .box, .jfx-check-box:selected .box {
+    -fx-border-color: -s;
+    -fx-background-color: -s;
+}
+
+.check-box:selected .mark {
+    -fx-background-color: WHITE;
+    -fx-border-color: WHITE;
+    -fx-shape: "M384 690l452-452 60 60-512 512-238-238 60-60z";
+}
+
+.check-box:indeterminate .mark, .jfx-check-box .indeterminate-mark {
+    -fx-background-color: -t;
+    -fx-border-color: -t;
+}
+
+.jfx-check-box .indeterminate-mark {
+    -fx-background-radius: 0em;
+    -fx-max-height: 3;
+}
+
+.choice-box > .label {
+    -fx-padding: 0.333333em 0em 0.333333em 0.833333em;
+    -fx-text-fill: -t;
+}
+
+.choice-box .menu-item > .label {
+    -fx-padding: 0.083333em 0.416667em;
+}
+
+.choice-box .menu-item:focused {
+    -fx-background-color: derive(-t, 75%);
+}
+
+.choice-box .menu-item:focused > .label {
+    -fx-text-fill: WHITE;
+}
+
+
+/* 4. FORMS (TextField, JFXTextField, JFXPasswordField, TextArea) *****************************************************/
+.text-field, .text-area {
+    -fx-background-color: derive(-t, 165%);
+    -fx-border-color: derive(-fx-background, -30%);
+}
+
+.text-area {
+    -fx-wrap-text: true;
+}
+
+.text-area .content {
+    -fx-background-color: derive(-t, 165%);
+}
+
+.text-field:focused, .text-area:focused {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: derive(-t, 50%);
+}
+
+.jfx-text-field, .jfx-password-field, .jfx-text-area {
+    -jfx-focus-color: -p;
+    -jfx-unfocus-color: -t;
+}
+
+.field-error {
+    -fx-border-color: -d;
+    -fx-border-insets: -0.083333em 0em 0em 0em;
+    -fx-border-width: 0.166667em;
+}
+
+.jfx-text-field, .jfx-text-field:focused, .jfx-password-field, .jfx-password-field:focused,
+.jfx-text-area, .jfx-text-area:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-prompt-text-fill: -t;
+    -jfx-label-float: true;
+}
+
+.text-area:focused .content, .jfx-text-area .content {
+    -fx-background-color: #FFFFFF;
+}
+
+.field-error > .input-line {
+    -fx-background-color: -d;
+    -fx-pref-height: 0.166667em;
+    -fx-translate-y: -0.083333em;
+}
+
+.email, .password {
+}
+
+.field-xs {
+    -fx-max-width: 8.333333em;
+}
+
+.field-sm {
+    -fx-max-width: 10.833333em;
+}
+
+.field-md {
+    -fx-max-width: 13.333333em;
+}
+
+.field-lg {
+    -fx-max-width: 15.833333em;
+}
+
+.field-xl {
+    -fx-max-width: 18.333333em;
+}
+
+
+/* 5. VIEWS (ListView) ************************************************************************************************/
+.list-view {
+    -fx-background-color: transparent;
+}
+
+.list-view .list-cell {
+    -fx-padding: 0.416667em 0em 0.416667em 0.833333em;
+}
+
+.list-view .list-cell:even {
+    -fx-background-color: derive(-t, 161%);
+}
+
+.list-view .list-cell:odd {
+    -fx-background-color: transparent;
+}
+
+.list-view .list-cell:filled:hover {
+    -fx-background-color: derive(-t, 150%);
+}
+
+.list-view .list-cell:filled:selected {
+    -fx-background-color: derive(-t, 75%);
+    -fx-text-fill: WHITE;
+}
+
+.list-view > .virtual-flow > .scroll-bar:vertical, .list-view > .virtual-flow > .scroll-bar:horizontal {
+    -fx-padding: 0em;
+}
+
+
+/* ?. SEPARATOR *******************************************************************************************************/
+.separator .line {
+    -fx-background-color: derive(-t, 125%);
+    -fx-border-width: 0em;
+}
+
+.separator:horizontal {
+    -fx-padding: 0.416667em 0em 0.416667em 0em;
+}
+
+
+/* ?. TOOLTIP *********************************************************************************************************/
+.tooltip {
+    -fx-background-color: WHITE;
+    -fx-background-radius: 0em;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.3), 6, 0.5, 0.5, 0.5);
+    -fx-text-fill: -t;
+    -fx-wrap-text: true;
+}
+
+
+/* ?. SCROLL BAR & SCROLLPANE *****************************************************************************************/
+.scroll-pane {
+    -fx-padding: 0em 0em 0.833333em 0em;
+}
+
+.scroll-bar, .scroll-bar:vertical .track, .scroll-bar:horizontal .track {
+    -fx-background-color: derive(-t, 150%);
+    -fx-border-color: transparent;
+}
+
+.scroll-bar:vertical {
+    -fx-background-insets: 0em 0em 0em 1em;
+}
+
+.scroll-bar:vertical:hover, .scroll-bar:vertical:pressed {
+    -fx-background-insets: 0em 0em 0em 0.5em;
+}
+
+.scroll-bar:vertical .track {
+    -fx-background-insets: -1em 0em -1em 0.916667em;
+}
+
+.scroll-bar:vertical:hover .track, .scroll-bar:vertical:pressed .track {
+    -fx-background-insets: -1em 0em -1em 0.416667em;
+}
+
+.scroll-bar:vertical .thumb {
+    -fx-background-insets: -1em -0.083333em -1em 0.916667em;
+}
+
+.scroll-bar:vertical:hover .thumb, .scroll-bar:vertical:pressed .thumb {
+    -fx-background-insets: -1em -0.083333em -1em 0.416667em;
+}
+
+.scroll-bar:horizontal {
+    -fx-background-insets: 1em 0em 0em 0em;
+}
+
+.scroll-bar:horizontal:hover, .scroll-bar:horizontal:pressed {
+    -fx-background-insets: 0.5em 0em 0em 0em;
+}
+
+.scroll-bar:horizontal .track {
+    -fx-background-insets: 0.916667em -1em 0em -1em;
+}
+
+.scroll-bar:horizontal:hover .track, .scroll-bar:horizontal:pressed .track {
+    -fx-background-insets: 0.416667em -1em 0em -1em;
+}
+
+.scroll-bar:horizontal .thumb {
+    -fx-background-insets: 0.916667em -1em -0.083333em -1em;
+}
+
+.scroll-bar:horizontal:hover .thumb, .scroll-bar:horizontal:pressed .thumb {
+    -fx-background-insets: 0.416667em -1em -0.083333em -1em;
+}
+
+.scroll-bar:vertical .thumb, .scroll-bar:horizontal .thumb {
+    -fx-background-color: derive(-t, 75%);
+    -fx-background-radius: 0em;
+}
+
+.scroll-pane, .scroll-pane > .viewport, .scroll-pane .corner, .scroll-bar .track-background,
+.scroll-bar:vertical *.increment-button, .scroll-bar:vertical *.decrement-button,
+.scroll-bar:horizontal *.increment-button, .scroll-bar:horizontal *.decrement-button,
+.scroll-bar:vertical *.increment-arrow, .scroll-bar:vertical *.decrement-arrow,
+.scroll-bar:horizontal *.increment-arrow, .scroll-bar:horizontal *.decrement-arrow {
+    -fx-background-color: transparent;
+}
+
+
+/* ?. LAYOUT **********************************************************************************************************/
+FlowPane {
+    -fx-hgap: 0.833333em;
+    -fx-vgap: 1.25em;
+}
+
+HBox {
+    -fx-spacing: 0.833333em;
+}
+
+FlowPane, HBox {
+    -fx-padding: 1.25em 0em;
+}

@@ -1,0 +1,60 @@
+/*
+    Created on : June 27, 2019
+    Author     : BENJAH
+
+    Main stylesheet for this project
+*/
+
+.text-white {
+    -fx-text-fill: white;
+}
+
+.button, .toggle-button, .choice-box, .text-field {
+    -fx-pref-height: 30;
+}
+
+#main_pane {
+    -fx-background-color: white;
+}
+
+#header {}
+
+#title {
+    -fx-alignment: CENTER;
+    -fx-font-size: 40;
+}
+
+#clz {
+    -fx-graphic:  url('../img/icons8_close_32px.png');
+}
+
+#max {
+    -fx-graphic:  url('../img/icons8_maximize_32px.png');
+}
+
+#res {
+    -fx-graphic:  url('../img/icons8_restore_32px.png');
+}
+
+#min {
+    -fx-graphic:  url('../img/icons8_minimize_32px.png');
+}
+
+#clz, #max, #res, #min {
+    -fx-pref-height: 3.333333em;
+    -fx-pref-width: 3.333333em;
+}
+
+#min:hover, #max:hover, #res:hover {
+    -fx-background-color: rgba(255,255,255,.1);
+}
+
+#clz:hover {
+    -fx-background-color: -d;
+}
+
+#footer {}
+
+#header, #footer {
+    -fx-background-color: -t;
+}

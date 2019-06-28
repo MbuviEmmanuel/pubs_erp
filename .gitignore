@@ -2,6 +2,10 @@
 *.bak
 *.class
 
+#eclipse specific
+.metadata/*
+.settings
+
 #intellij specific
 .idea/
 *.iml
@@ -24,3 +28,9 @@
 *.ini
 [Tt]humbs.db
 *.DS_Store
+
+make/dist/jfoenix.jar
+out
+libs/*
+.classpath
+.project
